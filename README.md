@@ -1,1 +1,1 @@
-gerbang logika
+

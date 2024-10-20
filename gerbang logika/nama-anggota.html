@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Anggota</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+        }
+
+        body {
+            color: #fff;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .member {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .member:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid #fff;
+        }
+
+        .member h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .member p {
+            font-size: 14px;
+            color: #eee;
+        }
+
+        .menu-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+        }
+
+        .menu-button .bar {
+            width: 100%;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background: white;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 200px;
+            text-align: left;
+            z-index: 1000;
+        }
+
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown-menu a.active {
+            background-color: #d1e7fd; /* Warna latar belakang saat menu aktif */
+            color: #0072ff; /* Warna teks saat menu aktif */
+        }
+
+        .back-button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #ff4757;
+        }
+
+        @media screen and (max-width: 768px) {
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .member {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .member img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .member h3 {
+                font-size: 18px;
+            }
+
+            .member p {
+                font-size: 12px;
+            }
+
+            .back-button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nama Anggota</h1>
+
+        <!-- Menu Hamburger -->
+        <div class="menu-container">
+            <button class="menu-button" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="dropdown-menu" id="menu">
+                <a href="index.html" class="menu-item" onclick="setActiveMenu(event)">🔢 Kalkulator</a>
+                <a href="penjelasan-kalkulator.html" class="menu-item" onclick="setActiveMenu(event)">📖 Penjelasan</a>
+            </div>
+        </div>
+
+        <div class="team-container">
+            <div class="member">
+                <img src="foto pian.jpg" alt="Alfian Eka Cahyo">
+                <h3>Alfian Eka Cahyo</h3>
+                <p>Ketua</p>
+            </div>
+            <div class="member">
+                <img src="foto rizki.jpg" alt="Rizki Dwi Saputra">
+                <h3>Rizki Dwi Saputra</h3>
+                <p>Anggota</p>
+            </div>
+            <div class="member">
+                <img src="foto edo.jpg" alt="Edwardo Rinaldi">
+                <h3>Edwardo Rinaldi</h3>
+                <p>Anggota</p>
+            </div>
+            <div class="member">
+                <img src="poto eki.jpg" alt="Eki Ardiansyah">
+                <h3>Eki Ardiansyah</h3>
+                <p>Anggota</p>
+            </div>
+        </div>
+
+        <button class="back-button" onclick="window.location.href='index.html'">Kembali</button>
+    </div>
+
+    <script>
+        /* Fungsi untuk menampilkan/menyembunyikan menu hamburger */
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+
+        /* Menyembunyikan menu saat pengguna mengklik di luar menu */
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById("menu");
+            var menuButton = document.querySelector('.menu-button');
+
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        /* Fungsi untuk mengatur menu yang aktif */
+        function setActiveMenu(event) {
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function(item) {
+                item.classList.remove('active'); // Hapus status aktif dari semua item
+            });
+            event.target.classList.add('active'); // Tambahkan status aktif ke item yang diklik
+        }
+    </script>
+</body>
+</html>
